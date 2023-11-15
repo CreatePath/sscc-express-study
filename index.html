@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 구경해보기</title>
+</head>
+<body>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            margin: 30px;
+        }
+        
+    </style>
+
+    <div class="container">
+        <button onclick="showDate()">오늘은 몇 일?</button>
+        <button id="changeBgBtn">배경 바꾸기</button>
+    </div>
+    
+    <script>
+        function showDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const date = now.getDate();
+            alert(`${year}-${month}-${date}`);
+        }
+        
+        document.querySelector("#changeBgBtn")
+            .addEventListener("click", () => {
+                if (document.body.style.backgroundColor == "purple") {
+                    document.body.style.backgroundColor = "white";
+                } else {
+                    document.body.style.backgroundColor = "purple";
+                }
+            });
+    </script>
+</body>
+</html>
