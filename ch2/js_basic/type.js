@@ -1,9 +1,9 @@
 const num = 1;
 console.log(typeof num); // number
 
-const hello = "hello world!";
+// const hello = "hello world!";
 // const hello = "hello world! " + num;
-// const hello = `hello world! ${num}`; // 가독성이 더 좋음.
+const hello = `hello world! ${num}`; // 가독성이 더 좋음.
 console.log(typeof hello); // string
 
 const boo = true;

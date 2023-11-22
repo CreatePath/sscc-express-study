@@ -11,6 +11,12 @@ const name = "양념치킨";
 const job = "chicken";
 const age = 30;
 
+// let obj3 = {
+//    name: name,
+//    job: job,
+//    age: age,
+// }
+
 let obj2 = {
     name, job, age
 };

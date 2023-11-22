@@ -61,6 +61,7 @@ let p1 = new Promise((resolve, reject) => {
 console.log("promise p1 실행 중...");
 p1.then((msg) => console.log(msg));
 
+
 let ptaskA = (a, b) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {

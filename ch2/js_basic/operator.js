@@ -29,13 +29,15 @@ console.log(undefined ?? a); // 12
 console.log(null ?? a); // 12
 console.log(0 || a); // 0
 
+// a = d || c; // d = 0 -> a = c
+// a = d ?? c;
 
 // 옵셔널 체이닝: null 또는 undefined 속성을 조회할 경우 에러가 발생하는 것을 막음.
 const o = {};
 console.log(o.a);
 
 const nl = null;
-// try { // 예외 처리
+//try { // 예외 처리
 //     console.log(nl.d);
 // } catch (e) {
 //     console.error(e);

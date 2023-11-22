@@ -3,14 +3,14 @@ function foo() {
     console.log("hi");
 }
 
-foo();
+foo(); // hi
 
 // 함수를 변수에 할당
 const f0 = function (x) {
     return x * x;
 }
 
-console.log(f0(3));
+console.log(f0(3)); // 9
 
 // 화살표 함수
 const f1 = (x) => {
