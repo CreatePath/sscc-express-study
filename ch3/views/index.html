@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>네이버 로그인</title>
+</head>
+<body>
+    <header>
+        <a id="title" href="https://www.naver.com/"><h1>NAVER</h1></a>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <form id="loginform" method="post" action="http://localhost:3000/users/register">
+                <input type="text" id="id" name="id" placeholder="아이디" />
+                <input type="password" id="pw" name="pw" placeholder="비밀번호" />
+                <input id="submit" type="submit" form="loginform" value="로그인" />
+            </form>
+
+            <div class="find_link">
+                <a id="find_pw" href="">비밀번호 찾기</a>
+                <a id="find_id" href="">아이디 찾기</a>
+                <a id="sign_up" href="">회원가입</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <a id="terms_of_use" href="">이용약관</a>
+        <a id="privacy_policy" href=""><strong>개인정보처리방침</strong></a>
+        <a id="law" href="">책임의 한계와 법적고지</a>
+        <a id="customer_center" href="">회원정보 고객센터</a>
+    </footer>
+</body>
+</html>
