@@ -11,7 +11,7 @@ class UserController {
             return ErrorResponse.wrongFormat(res);
 
         const foundUser = await User.findOne({
-            where: { [Op.or]: [{ studentId }, { name }] }
+            where: { studentId }
         });
 
         if (foundUser)
