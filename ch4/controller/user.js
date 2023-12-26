@@ -1,21 +1,22 @@
 const User = require("../models/user");
 const ErrorResponse = require("../errors/error-response");
-const { Op } = require("sequelize");
+const { IsExist, NotFound } = require("../errors");
 const { user2json } = require("../utils/util");
 
 class UserController {
-    static async register(req, res) {
+    static async register(req, res, next) {
         const {name, studentId, nickname, password, comment} = req.body;
 
         if (!name || !studentId || !nickname || !password)
-            return ErrorResponse.wrongFormat(res);
+            return ErrorResponse.wrongRequest(res);
 
         const foundUser = await User.findOne({
             where: { studentId }
         });
 
         if (foundUser)
-            return ErrorResponse.isConflict(res, "이미 가입하셨습니다.");
+            throw new IsExist("이미 가입하셨습니다.");
+            // return ErrorResponse.isConflict(res, "이미 가입하셨습니다.");
 
         const user = await User.create({
             name, 
@@ -33,8 +34,9 @@ class UserController {
         where: { id: req.params.id }
        });
 
-       if (!user) 
-        return ErrorResponse.NotFound(res, "해당 유저를 찾을 수 없습니다.");
+       if (!user)
+        throw new NotFound("유저를 찾을 수 없습니다.");
+        // return ErrorResponse.NotFound(res, "유저를 찾을 수 없습니다.");
 
        return res.json(user2json(user));
     }
